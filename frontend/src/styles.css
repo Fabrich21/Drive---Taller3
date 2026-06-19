@@ -1,0 +1,50 @@
+:root{
+	--bg: #ffffff; 
+	--card-bg: #ffffff;
+	--accent-soft: #fff0f4; 
+	--accent: #ffcfe0; 
+	--muted: #767676;
+	--title: #6b1840;
+}
+
+body{font-family:Inter,system-ui,Arial,Helvetica,sans-serif;background:var(--bg);color:#333;margin:0;padding:24px}
+.page{max-width:1100px;margin:0 auto}
+h1{text-align:center;color:var(--title);margin-bottom:18px}
+
+.grid{display:grid;grid-template-columns:1fr 360px;gap:22px;align-items:stretch}
+
+.card{background:var(--card-bg);border-radius:12px;padding:18px;border:1px solid #f3e6ea;box-shadow:0 2px 6px rgba(0,0,0,0.04)}
+
+.grid > .card{display:flex;flex-direction:column;min-height:340px}
+.upload-card{padding-right:18px}
+.recent-card{padding-left:18px}
+
+/* Upload card */
+.upload-card .card-header{font-weight:700;margin-bottom:6px}
+.upload-card .card-sub{font-size:13px;color:#666;margin-bottom:14px}
+.dropbox{border:2px dashed var(--accent-soft);border-radius:10px;padding:30px 18px;text-align:center;cursor:pointer;background:transparent}
+.drop-icon{font-size:28px;color:var(--accent);margin-bottom:8px}
+.drop-title{font-weight:600}
+.drop-sub{font-size:13px;color:var(--muted)}
+.drop-hint{font-size:12px;color:#bbb;margin-top:8px}
+.actions{display:flex;justify-content:flex-end;gap:10px;margin-top:14px}
+.btn-upload{background:var(--accent);border:none;padding:10px 18px;border-radius:8px;color:#6b1840;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn-upload:disabled{opacity:0.5;cursor:not-allowed}
+.btn-clear{background:var(--accent);border:none;padding:10px 18px;border-radius:8px;color:#6b1840;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:6px}
+.btn-clear:hover{filter:brightness(0.95)}
+
+/* Recent card */
+.recent-card .card-header{display:flex;justify-content:space-between;align-items:center;font-weight:700}
+.btn-refresh{background:transparent;border:none;font-size:18px;cursor:pointer}
+.recent-body{margin-top:18px}
+.recent-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:28px;color:#9aa}
+.recent-empty-icon{font-size:34px;margin-bottom:8px}
+.recent-empty-title{font-weight:700;margin-bottom:6px}
+.recent-empty-sub{font-size:13px;color:#b3b3b3}
+.recent-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f3f1f3}
+.recent-row:last-child{border-bottom:none}
+.recent-meta .recent-name{font-weight:600}
+.recent-meta .recent-date{font-size:12px;color:#777}
+.btn-download{background:var(--accent);border:none;padding:10px 18px;border-radius:8px;color:#6b1840;font-weight:700;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
+.btn-download:hover{filter:brightness(0.95)}
+.btn-download:disabled{opacity:0.5;cursor:not-allowed}

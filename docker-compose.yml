@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  localstack:
+    image: localstack/localstack:1.4
+    ports:
+      - "4566:4566"
+    environment:
+      - SERVICES=s3
+      - DEBUG=1
+    volumes:
+      - ./volumen:/var/lib/localstack
+
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      - S3_ENDPOINT=http://localstack:4566
+      - AWS_ACCESS_KEY_ID=test
+      - AWS_SECRET_ACCESS_KEY=test
+      - AWS_REGION=us-east-1
+      - BUCKET=drive-clone-bucket
+    depends_on:
+      - localstack
